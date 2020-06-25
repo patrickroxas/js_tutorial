@@ -59,3 +59,27 @@ function functionalSum(elements) {
 	return elements.reduce((total, n) => {return total +=n; });
 }
 console.log(functionalSum(numbers));
+
+// lengths: Imperative solution
+function imperativeLengths(elements) {
+	let lengths = {};
+	elements.forEach(function(element) {
+		lengths[element] = element.length;
+	});
+	return lengths;
+}
+console.log(imperativeLengths(states));
+
+// lengths: Functional solution multi-liner
+function functionalLengths(elements) {
+	return elements.reduce((lengths, element) => {
+														lengths[element] = element.length;
+														return lengths;
+													}, {}); 
+}
+console.log(functionalLengths(states));
+
+
+// lengths: Functional solution one-liner
+function functionalLengths(elements) { return elements.reduce((lengths, element) => { lengths[element] = element.length; return lengths; }, {}); }
+console.log(functionalLengths(states));
